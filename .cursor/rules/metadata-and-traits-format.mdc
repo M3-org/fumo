@@ -1,0 +1,61 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Metadata and Traits File Formats
+
+This document describes the structure of the JSON files found in the `metadata/` directory and the `[traits.json](mdc:traits.json)` file.
+
+## `metadata/*.json` Files
+
+Files within the `metadata/` directory (e.g., `[84.json](mdc:metadata/84.json)`) define individual items. Each file follows this general structure:
+
+```json
+{
+  "name": "Item Name String (e.g., Milady Fumo Baby 84)",
+  "image": "URL to the item's static image (e.g., https://fumo.remilia.org/fumo_nft/84.png)",
+  "animation_url": "URL to the item's animation (e.g., https://fumo.remilia.org/fumo_nft/84.mp4)",
+  "attributes": [
+    {
+      "trait_type": "Category of the trait (e.g., Hat, Top, Race)",
+      "value": "Specific value of the trait (e.g., VW Saturn, Sweater & Tie, Pale)"
+    }
+    // ... more attributes
+  ],
+  "external_url": "External URL related to the item (e.g., https://fumo.remilia.org)"
+}
+```
+
+*   `name`: A string identifier for the item.
+*   `image`: A URL pointing to a PNG image of the item.
+*   `animation_url`: A URL pointing to an MP4 animation of the item.
+*   `attributes`: An array of objects, where each object represents a trait of the item.
+    *   `trait_type`: The category of the trait (e.g., "Hat", "Eyes").
+    *   `value`: The specific characteristic within that category (e.g., "VW Saturn", "Remilio Brown").
+*   `external_url`: A link to an external website, likely the project's main page.
+
+## `[traits.json](mdc:traits.json)` File
+
+The `[traits.json](mdc:traits.json)` file acts as a master list or dictionary of all possible traits and their categories.
+
+```json
+{
+  "TraitCategory1": {
+    "TraitName1A": "FormattedTraitName1A",
+    "TraitName1B": "FormattedTraitName1B"
+    // ... more traits in this category
+  },
+  "TraitCategory2": {
+    "TraitName2A": "FormattedTraitName2A"
+    // ... more traits in this category
+  }
+  // ... more trait categories
+}
+```
+
+*   Each top-level key (e.g., `"Top"`, `"Background"`, `"Eyes"`) represents a `trait_type` found in the `metadata/*.json` files.
+*   The value for each category is an object where:
+    *   Keys are the human-readable trait `value` (e.g., "Maf Rothko", "Space Station").
+    *   Values are a formatted version of the trait name, often with spaces replaced by underscores (e.g., "Maf_Rothko", "Space_Station"). This formatted name might be used for generating image filenames or internal identifiers.
+*   There appear to be some duplicative category keys (e.g. "Background" and "Backgrounds", "Bottom" and "Bottoms", "Hat" and "Hats", "Top" and "Tops"). The distinction, if any, is not immediately clear from the structure alone.
