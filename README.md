@@ -25,8 +25,7 @@ config:
 ---
 kanban
   %% Sprint 1: Base Model, Asset Pipeline, Rigging & Material Standards
-  section Sprint 1
-  todo[To Do]
+  todo_s1[To Do - Sprint 1]
     %% Tasks for madjin
     issue11[#11 Define asset naming...]@{ ticket: '11', priority: 'Medium', assigned: 'madjin' }
     issue4[#4 Define modelling task list]@{ ticket: '4', priority: 'Medium', assigned: 'madjin' }
@@ -39,20 +38,18 @@ kanban
     issue7[#7 UV cleanup / layout improvements]@{ ticket: '7', priority: 'Medium' }
     %% Shared Tasks
     issue8[#8 Rig base model and traits...]@{ ticket: '8', priority: 'High' }
-  inprogress[In Progress]
-  done[Done]
+  inprogress_s1[In Progress - Sprint 1]
+  done_s1[Done - Sprint 1]
 
-  %% Sprint 2: Expressions & Further Modeling (Placeholder)
-  section Sprint 2
-  todo2[To Do (Sprint 2)]
+  %% Sprint 2: Expressions & Further Modeling
+  todo_s2[To Do - Sprint 2]
     issue6[#6 Create expression set]@{ ticket: '6', priority: 'Medium' }
     issue10[#10 Add expression controls]@{ ticket: '10', priority: 'Medium' }
-  inprogress2[In Progress (Sprint 2)]
-  done2[Done (Sprint 2)]
+  inprogress_s2[In Progress - Sprint 2]
+  done_s2[Done - Sprint 2]
 
-  %% Sprint 3: Packaging & Final QA (Placeholder)
-  section Sprint 3
-  todo3[To Do (Sprint 3)]
+  %% Sprint 3: Packaging & Final QA
+  todo_s3[To Do - Sprint 3]
     issue12[#12 Prepare clean Blender collection archive]@{ ticket: '12', priority: 'Medium' }
-  inprogress3[In Progress (Sprint 3)]
-  done3[Done (Sprint 3)]
+  inprogress_s3[In Progress - Sprint 3]
+  done_s3[Done - Sprint 3]
